@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/30pr/MainMenu.unity
+    guid: 36987b00a27847d42b9f38a61db34ee0
+  - enabled: 1
+    path: Assets/30pr/AboutAuthor.unity
+    guid: ad84a736be6f691479bfd87b4cbc9187
+  - enabled: 1
+    path: Assets/30pr/Practice_30.unity
+    guid: ef07f992711acc44da9ef8de2df99097
   m_configObjects: {}
