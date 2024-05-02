@@ -7,6 +7,7 @@ public class InputController : MonoBehaviour
     private float _startX;
     private float _startY;
 
+    private float _initialDistance;
 
     // Update is called once per frame
     void Update()
@@ -26,6 +27,24 @@ public class InputController : MonoBehaviour
                 if (touch.position.x - _startX >= 100 && Mathf.Abs(touch.position.y - _startY) <= 50)
                     print("Right Swipe");
             }
+        }
+
+
+
+        if (Input.touchCount == 1)
+        {
+            Touch touchFirst = Input.GetTouch(0);
+            //Unity remote didn`t work, simulated second point
+            Vector2 secondTouchPos = new Vector2(150, 150);
+
+            if (touchFirst.phase == TouchPhase.Began)
+                _initialDistance = Vector2.Distance(touchFirst.position, secondTouchPos);
+            else if (touchFirst.phase == TouchPhase.Ended)
+            {
+                if (Vector2.Distance(touchFirst.position, secondTouchPos) > _initialDistance)
+                    print("Zoom gesture");
+            }
+            
         }
 
     }
